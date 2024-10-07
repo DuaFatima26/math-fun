@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backward Counting</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+         
+            background-color: #00DBDE;
+         background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+
+            color: white;
+            font-family: 'Comic Sans MS', cursive, sans-serif; 
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .counting {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 24px;
+        }
+        .line {
+            margin: 10px 0;
+        }
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Backward Counting</h1>
+    
+    <div id="output" class="counting"></div>
+
+    <script>
+        var start = +prompt("Enter the start number:");
+        var end = +prompt("Enter the end number:");
+        var outputHtml = '';
+        
+        if (start >= 1 && end >= 1 && start >= end) {
+            for (var i = start; i >= end; i--) {
+                outputHtml += i + ' ';
+                if ((start - i + 1) % 10 === 0) {
+                    outputHtml += '<br>'; //
+                }
+            }
+        } else {
+            outputHtml = '<p>Please enter valid numbers (start > end).</p>';
+        }
+
+        document.getElementById('output').innerHTML = outputHtml;
+    </script>
+</body>
+</html>

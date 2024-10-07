@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition Result</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #ff6f61, #ff3f20);
+            color: white;
+            font-family: 'Comic Sans MS', cursive, sans-serif; 
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Addition Result</h1>
+    
+    <div id="output"></div>
+
+    <script>
+        var number1 = +prompt("Enter the first number:"); 
+        var number2 = +prompt("Enter the second number:"); 
+        var outputHtml = '';
+
+        if (number1 >= 0 && number2 >= 0) {
+            var result = number1 + number2; 
+            outputHtml = '<p>' + number1 + ' + ' + number2 + ' = ' + result + '</p>';  
+        } else {
+            outputHtml = '<p>Please enter valid numbers (greater than or equal to 0).</p>'; 
+        }
+
+        document.getElementById('output').innerHTML = outputHtml; 
+    </script>
+</body>
+</html>

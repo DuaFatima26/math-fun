@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #8e44ad, #3498db); 
+            color: white;
+            font-family: 'Comic Sans MS', cursive, sans-serif; 
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            font-size: 24px;
+        }
+        th, td {
+            border: 2px solid white;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multiplication Result</h1>
+    
+    <div id="output"></div>
+
+    <script>
+        var number1 = +prompt("Enter the first number:"); 
+        var number2 = +prompt("Enter the second number:"); 
+        var outputHtml = '';
+
+        if (number1 >= 1 && number2 >= 1) {
+            var result = number1 * number2; 
+            outputHtml = '<p>' + number1 + ' x ' + number2 + ' = ' + result + '</p>'; 
+        } else {
+            outputHtml = '<p>Please enter valid numbers (greater than 0).</p>'; 
+        }
+
+        document.getElementById('output').innerHTML = outputHtml; 
+    </script>
+</body>
+</html>
